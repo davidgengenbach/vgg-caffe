@@ -1,0 +1,1 @@
+images/dog.jpg 0

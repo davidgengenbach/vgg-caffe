@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+__pycache__
+*.pyc
+*.caffemodel
+!.gitkeep
+data/fc8.txt
+data/prob.txt
