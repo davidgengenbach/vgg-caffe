@@ -1,15 +1,16 @@
-# VGG16 caffe net
+# VGG16 and VGG19 caffe net
 
-Uses the [VGG16 net from the modelzoo](https://gist.github.com/ksimonyan/211839e770f7b538e2d8#file-readme-md). Minor changes in the `*.prototxt` to adapt it to the new caffe version.
+Uses the [VGG16](https://gist.github.com/ksimonyan/211839e770f7b538e2d8#file-readme-md) and [VGG19](https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md) nets from the modelzoo. Minor changes in the `*.prototxt` to adapt it to the new caffe version.
 
 See [net.ipynb](net.ipynb).
 
 ## Instructions
 ```shell
-# Download model
-wget --show-progress -O 'data/VGG_ILSVRC_16_layers.caffemodel' 'http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel'
+# Download models 
+wget --show-progress -O 'model/VGG_ILSVRC_16_layers.caffemodel' 'http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel'
+wget --show-progress -O 'model/VGG_ILSVRC_19_layers.caffemodel' 'http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_19_layers.caffemodel'
 
-# Convert model to new caffe format (caffe needed)
+# Convert models to new caffe format (caffe needed)
 # (Not strictly needed. Removes deprecation notice)
 upgrade_net_proto_binary MODEL.caffemodel MODEL.new.caffemodel
 
@@ -20,4 +21,9 @@ cd ..
 
 # Start jupyter notebook
 ./docker/start-jupyter.sh
+
+# Open browser at 127.0.0.1:8888
+# Enter 'a' as the password to enter the jupyter env
+
+# Maybe you have to adapt some paths to the models. See net.ipynb
 ```
